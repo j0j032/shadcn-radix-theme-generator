@@ -6,7 +6,7 @@ import {
   radixGrayScales,
   type AllRadixBrandScales,
   type RadixGrayScale,
-} from "../lib/colors/themes";
+} from "@/lib/colors/themes";
 import {
   type ThemeConfig,
   type PrimaryIntensity,
@@ -14,7 +14,7 @@ import {
   getDefaultBrand,
   applyThemeCSS,
   generateThemeCSS,
-} from "../lib/colors/theme-generator";
+} from "@/lib/colors/theme-generator";
 
 type RadixTheme = keyof typeof allRadixPalettes;
 
@@ -100,6 +100,9 @@ export function RadixThemeProvider({
         // Fallback to default brand if current brand is not compatible
         newConfig.brand = getDefaultBrand(base as RadixGrayScale);
       }
+    } else {
+      // When switching to monotone theme, clear the brand
+      newConfig.brand = undefined;
     }
 
     setConfigState(newConfig);

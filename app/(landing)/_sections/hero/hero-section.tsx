@@ -3,7 +3,7 @@ import {
   SectionDescription,
   SectionTitle,
 } from "@/components/layout/section";
-import { DottedBg } from "@/components/dotted-bg";
+import { DottedBg } from "@/components/layout/dotted-bg";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -30,10 +30,11 @@ export function HeroSection() {
         </div>
         <Image
           src="/hero-img-dark.png"
-          alt="Hero Image"
+          alt="Scaletone theme generator interface showing shadcn/ui components with different color themes"
           width={864}
           height={545}
           className="sm:hidden w-full h-auto "
+          priority
         />
         <div className="flex flex-col sm:flex-row w-full gap-4 ">
           <Button asChild size="lg">
@@ -48,10 +49,11 @@ export function HeroSection() {
         </div>
         <Image
           src="/hero-img-dark.png"
-          alt="Hero Image"
+          alt="Scaletone theme generator interface showing shadcn/ui components with different color themes"
           width={1000}
           height={1000}
           className="hidden sm:block w-full h-auto self-end max-w-[864px]"
+          priority
         />
       </div>
     </Section>
